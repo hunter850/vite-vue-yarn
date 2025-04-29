@@ -27,8 +27,6 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
-    env:
-      VITE_HELLO: ${{ secrets.VITE_HELLO }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -40,6 +38,8 @@ jobs:
       - name: Install dependencies
         run: yarn install --frozen-lockfile
       - name: Build
+        env:
+          VITE_HELLO: ${{ secrets.VITE_HELLO }}
         run: yarn build
       - name: Setup Pages
         uses: actions/configure-pages@v5
