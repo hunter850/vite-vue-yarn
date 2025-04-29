@@ -3,7 +3,7 @@ import { onMounted } from 'vue';
 import HelloWorld from './components/HelloWorld.vue'
 
 onMounted(() => {
-  console.log("HELLO: ", import.meta.env.HELLO);
+  console.log("HELLO: ", import.meta.env.VITE_HELLO);
 });
 </script>
 
